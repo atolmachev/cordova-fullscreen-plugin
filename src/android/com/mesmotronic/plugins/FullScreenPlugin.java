@@ -343,6 +343,7 @@ public class FullScreenPlugin extends CordovaPlugin
 							if (hasFocus)
 							{
 								decorView.setSystemUiVisibility(uiOptions);
+                                decorView.setFitsSystemWindows(true);
 							}
 						}
 					});
@@ -352,8 +353,9 @@ public class FullScreenPlugin extends CordovaPlugin
 						@Override
 						public void onSystemUiVisibilityChange(int visibility) 
 						{
-							decorView.setSystemUiVisibility(uiOptions);
-						}
+                            decorView.setSystemUiVisibility(uiOptions);
+                            decorView.setFitsSystemWindows(true);
+                        }
 					});					
 					
 					final Window.Callback windowCallback = getWindowCallback();
@@ -372,6 +374,7 @@ public class FullScreenPlugin extends CordovaPlugin
 							if (hasFocus)
 							{
 								decorView.setSystemUiVisibility(uiOptions);
+                                decorView.setFitsSystemWindows(true);
 							}
 							
 							windowCallback.onWindowFocusChanged(hasFocus);
